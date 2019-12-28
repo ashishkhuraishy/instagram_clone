@@ -24,7 +24,6 @@ class _HomeState extends State<Home> {
     _pageController = PageController();
   }
 
-
   @override
   Widget build(BuildContext context) {
    return Scaffold(
