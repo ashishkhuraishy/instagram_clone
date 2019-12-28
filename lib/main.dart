@@ -1,7 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/Screens/Auth/login.dart';
-import 'package:instagram_clone/Screens/Home/feed.dart';
 import 'package:instagram_clone/Screens/Auth/signup.dart';
 import 'package:instagram_clone/Services/Auth.dart';
 import 'package:instagram_clone/wrapper.dart';
