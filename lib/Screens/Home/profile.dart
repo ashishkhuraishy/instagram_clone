@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/Screens/Home/edit_profile.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -79,7 +80,9 @@ class _ProfileScreenState extends State<Profile> {
                       textColor: Colors.white,
                       icon: Icon(Icons.edit),
                       label: Text('Edit Profile'),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfile()));
+                      },
                     ),
                   )
                 ],

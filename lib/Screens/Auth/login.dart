@@ -42,80 +42,83 @@ class _LogInState extends State<LogIn> {
     return loading
         ? Loading()
         : Scaffold(
-            body: SingleChildScrollView(
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Instagram',
-                      style: TextStyle(fontFamily: "BillaBong", fontSize: 50.0),
-                    ),
-                    Form(
-                      key: _formKey,
-                      child: Column(
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 24, vertical: 8.0),
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                labelText: "Email",
-                              ),
-                              validator: (input) => !input.contains('@')
-                                  ? 'Enter a valid Email'
-                                  : null,
-                              onSaved: (input) => _email = input,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 24, vertical: 8.0),
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                labelText: "Password",
-                              ),
-                              validator: (input) => input.length < 6
-                                  ? 'Password too Short'
-                                  : null,
-                              onSaved: (input) => _password = input,
-                              obscureText: true,
-                            ),
-                          ),
-                          Container(
-                            width: 250,
-                            child: FlatButton(
-                              onPressed: _submitForm,
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                "Log In",
-                                style: TextStyle(fontSize: 18.0),
-                              ),
-                              color: Colors.blue,
-                              textColor: Colors.white,
-                            ),
-                          ),
-                          Container(
-                            width: 250,
-                            child: FlatButton(
-                              onPressed: () {
-                                widget.toggleView();
-                              },
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                "Sign Up",
-                                style: TextStyle(fontSize: 18.0),
-                              ),
-                              color: Colors.blue,
-                              textColor: Colors.white,
-                            ),
-                          )
-                        ],
+            body: SafeArea(
+              child: SingleChildScrollView(
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Instagram',
+                        style:
+                            TextStyle(fontFamily: "BillaBong", fontSize: 50.0),
                       ),
-                    )
-                  ],
+                      Form(
+                        key: _formKey,
+                        child: Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 24, vertical: 8.0),
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  labelText: "Email",
+                                ),
+                                validator: (input) => !input.contains('@')
+                                    ? 'Enter a valid Email'
+                                    : null,
+                                onSaved: (input) => _email = input,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 24, vertical: 8.0),
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  labelText: "Password",
+                                ),
+                                validator: (input) => input.length < 6
+                                    ? 'Password too Short'
+                                    : null,
+                                onSaved: (input) => _password = input,
+                                obscureText: true,
+                              ),
+                            ),
+                            Container(
+                              width: 250,
+                              child: FlatButton(
+                                onPressed: _submitForm,
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "Log In",
+                                  style: TextStyle(fontSize: 18.0),
+                                ),
+                                color: Colors.blue,
+                                textColor: Colors.white,
+                              ),
+                            ),
+                            Container(
+                              width: 250,
+                              child: FlatButton(
+                                onPressed: () {
+                                  widget.toggleView();
+                                },
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "Sign Up",
+                                  style: TextStyle(fontSize: 18.0),
+                                ),
+                                color: Colors.blue,
+                                textColor: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
